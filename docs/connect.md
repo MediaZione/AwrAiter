@@ -16,7 +16,7 @@ It works on **every plan, including the free one**. The assistant only ever sees
 https://awraiter.ai/mcp
 ```
 
-[Русская версия](MCP.ru.md)
+[Русская версия](connect.ru.md) · [Tool reference](tools.md) · [← back to the README](../README.md)
 
 ---
 
@@ -103,14 +103,16 @@ The token is shown once at creation; you can see last-used time and revoke any t
 
 ## What the assistant can do — all 25 tools
 
-**Read-only tools** work with any scope; tools marked ✍️ change things and need OAuth or a *full*-scope token. `deep_analyze` additionally spends the team's AI credits — everything else is free.
+Tools marked ✍️ change something and need OAuth or a *full*-scope token; a `read` token cannot even see them. Everything else is read-only and works with any scope. `deep_analyze` is marked ✍️ because it spends the team's AI credits — every other tool is free.
+
+The full reference, with the exact scope each tool needs, is in **[tools.md](tools.md)**.
 
 ### Teams & channels
 
 | Tool | What it does |
 |---|---|
 | `list_teams` | List your teams; marks the active one. |
-| `switch_team` | Switch the active team. |
+| `switch_team` ✍️ | Switch the active team. |
 | `list_channels` | List the active team's channels. |
 | `get_channel` | One channel's profile (name, language, description). |
 
@@ -120,7 +122,7 @@ The token is shown once at creation; you can see last-used time and revoke any t
 |---|---|
 | `get_channel_stats` | The analytics dashboard: subscribers, reach, ER, dynamics over 1–90 days. |
 | `get_channel_insights` | What works for this audience: top/flop posts scored vs the 30-day median, plus statistically-backed patterns (best day, posting window, length, question-at-the-end) once the channel has 20+ scored posts. |
-| `deep_analyze` | Deep AI analysis of one channel or a comparison of several — runs on AwrAIter's servers, spends AI credits. |
+| `deep_analyze` ✍️ | Deep AI analysis of one channel or a comparison of several — runs on AwrAIter's servers, spends AI credits. |
 | `get_recent_posts` | Latest published posts of a channel. |
 | `search_channel_content` | Semantic search over the channel's own past posts and sources. |
 

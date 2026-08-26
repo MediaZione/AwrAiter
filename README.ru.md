@@ -9,7 +9,7 @@ MCP-сервер для **Telegram-каналов, где вы админист�
 
 **Это не юзербот.** Ни номера телефона, ни кода входа, ни файла сессии. Сервер работает от вашего аккаунта AwrAIter и видит только каналы той команды, доступ к которой вы подтвердили.
 
-[English version](README.md) · [Полный гайд по подключению](MCP.ru.md) · [awraiter.ai](https://awraiter.ai)
+[English version](README.md) · [Гайд по подключению](docs/connect.ru.md) · [Справочник инструментов](docs/tools.ru.md) · [awraiter.ai](https://awraiter.ai)
 
 ---
 
@@ -67,7 +67,8 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp
 Authorization: Bearer ВАШ_ТОКЕН
 ```
 
-Пошаговые инструкции для Claude, Claude Code, ChatGPT, Codex, Gemini CLI и Qwen Code — в **[MCP.ru.md](MCP.ru.md)**.
+Пошаговые инструкции для Claude, Claude Code, ChatGPT, Codex, Gemini CLI и Qwen Code — в
+**[docs/connect.ru.md](docs/connect.ru.md)**, готовые файлы конфигов — в **[examples/](examples/)**.
 
 ## Инструменты
 
@@ -85,7 +86,7 @@ Authorization: Bearer ВАШ_ТОКЕН
 | `search_channel_content` | Семантический поиск по постам и материалам самого канала |
 | `search_sources` | Поиск по привязанным источникам канала |
 | `draft_from_sources` | Свежие источники, ещё не использованные в постах |
-| `deep_analyze` | Глубокий AI-разбор эффективности канала (тратит AI-кредиты команды) |
+| `deep_analyze` ✍️ | Глубокий AI-разбор эффективности канала — единственный инструмент, который тратит AI-кредиты команды |
 | `check_uniqueness` | Не дубль ли черновик и не копия ли источника |
 | `score_post` | Оценка черновика на данных именно этого канала |
 | `preview_post` | Точный вид сообщения перед отправкой — текст, медиа, форматирование |
@@ -100,6 +101,8 @@ Authorization: Bearer ВАШ_ТОКЕН
 | `add_banlist_entry` ✍️ | Добавить стоп-слово |
 | `remove_banlist_entry` ✍️ | Убрать стоп-слово |
 | `get_playbook` | Пошаговый плейбук под сценарий работы |
+
+Что именно возвращает каждый инструмент и какой скоуп ему нужен — в **[docs/tools.ru.md](docs/tools.ru.md)**.
 
 ## Аутентификация
 
@@ -124,6 +127,7 @@ OAuth 2.1 с PKCE и динамической регистрацией клие�
 | Если токен утёк | Весь ваш Telegram | Отозвать токен в панели, больше ничего не задето |
 
 Любая запись проходит тот же канальный контроль доступа, что и в панели, а на токен действуют лимиты запросов.
+Модель целиком и порядок сообщения об уязвимости — в **[SECURITY.md](SECURITY.md)**.
 
 ## Об AwrAIter
 

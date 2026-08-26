@@ -1,0 +1,48 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docs:
+    name: Links and JSON
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check relative links and anchors
+        run: python3 scripts/check_links.py
+
+      - name: Check example configs are valid JSON
+        run: |
+          for file in examples/*.json; do
+            python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$file"
+            echo "ok $file"
+          done
+
+  manifest:
+    name: server.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate against the MCP registry schema
+        run: |
+          python3 -m pip install --quiet check-jsonschema
+          schema=$(python3 -c "import json; print(json.load(open('server.json'))['\$schema'])")
+          echo "Validating against $schema"
+          python3 -m check_jsonschema --schemafile "$schema" server.json
+
+      - name: Check the advertised URL answers
+        run: |
+          # The MCP endpoint requires authentication: 401 is the healthy answer,
+          # and anything in the 5xx range or a connection failure is not.
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://awraiter.ai/mcp)
+          echo "GET /mcp -> $code"
+          case "$code" in
+            401|405|400) exit 0 ;;
+            *) echo "unexpected status"; exit 1 ;;
+          esac

@@ -9,7 +9,7 @@ A remote MCP server for the **Telegram channels you administer**: read analytics
 
 **Not a userbot.** No phone number, no login code, no `.session` file. The server acts through your AwrAIter account and reaches only the channels of the team you authorize.
 
-[Русская версия](README.ru.md) · [Full connection guide](MCP.md) · [awraiter.ai](https://awraiter.ai)
+[Русская версия](README.ru.md) · [Connection guide](docs/connect.md) · [Tool reference](docs/tools.md) · [awraiter.ai](https://awraiter.ai)
 
 ---
 
@@ -67,7 +67,8 @@ Create a token in the panel under [**MCP connection**](https://awraiter.ai/mcp-c
 Authorization: Bearer YOUR_TOKEN
 ```
 
-Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI and Qwen Code are in **[MCP.md](MCP.md)**.
+Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI and Qwen Code are in
+**[docs/connect.md](docs/connect.md)**; ready-to-paste config files are in **[examples/](examples/)**.
 
 ## Tools
 
@@ -85,7 +86,7 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 | `search_channel_content` | Semantic search over the channel's own posts and source material |
 | `search_sources` | Search the channel's bound sources |
 | `draft_from_sources` | Freshest scraped sources not yet used in a post |
-| `deep_analyze` | Deep AI analysis of channel performance (spends the team's AI credits) |
+| `deep_analyze` ✍️ | Deep AI analysis of channel performance — the one tool that spends the team's AI credits |
 | `check_uniqueness` | Is this draft a near-duplicate of existing posts or a copy of a source? |
 | `score_post` | Data-grounded quality signal for a draft, specific to this channel |
 | `preview_post` | Exact message that would be sent — title, body, media, formatting |
@@ -100,6 +101,8 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 | `add_banlist_entry` ✍️ | Add a forbidden word to the channel's banlist |
 | `remove_banlist_entry` ✍️ | Remove a word from the banlist |
 | `get_playbook` | Step-by-step operator playbook for a workflow |
+
+What each tool returns, and the exact scope it needs, is in **[docs/tools.md](docs/tools.md)**.
 
 ## Authentication
 
@@ -124,6 +127,7 @@ Tokens are listed, and can be revoked, in the panel under [MCP connection](https
 | If the token leaks | Your whole Telegram account | Revoke the token in the panel; nothing else is exposed |
 
 Every write goes through the same channel-level access control as the panel, and rate limits apply per token.
+The full model, and how to report a vulnerability, are in **[SECURITY.md](SECURITY.md)**.
 
 ## About AwrAIter
 

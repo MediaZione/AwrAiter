@@ -4,5 +4,8 @@ contact_links:
     url: https://awraiter.ai/support/
     about: Account, billing and connection problems — the fastest way to reach us.
   - name: MCP connection guide
-    url: https://github.com/MediaZione/AwrAiter/blob/main/MCP.md
+    url: https://github.com/MediaZione/AwrAiter/blob/main/docs/connect.md
     about: Step-by-step setup for Claude, ChatGPT, Claude Code, Gemini CLI and Qwen Code.
+  - name: Security report
+    url: https://github.com/MediaZione/AwrAiter/blob/main/SECURITY.md
+    about: How to report a vulnerability privately. Please do not open a public issue.

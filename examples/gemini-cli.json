@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "awraiter": {
+      "httpUrl": "https://awraiter.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN"
+      }
+    }
+  }
+}
