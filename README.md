@@ -43,7 +43,7 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp
 
 ### ChatGPT
 
-In the browser, **Settings → Connectors** offers OAuth — paste the URL and press **Connect**.
+AwrAiter is not in the ChatGPT plugin catalog yet — add it as your own MCP server: **Settings → Security and login → Developer mode**, then **chatgpt.com/plugins → +**, paste the URL, keep OAuth and press **Connect**. In a chat, pick it from the tools menu.
 The ChatGPT/Codex desktop form has no OAuth option; connect it with a token instead (see below).
 
 ### Clients that take a JSON config
