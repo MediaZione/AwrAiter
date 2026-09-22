@@ -41,6 +41,19 @@ https://awraiter.ai/mcp
 claude mcp add --transport http awraiter https://awraiter.ai/mcp
 ```
 
+### Скилл для агентов (Claude Code, Codex и другие)
+
+В репозитории [AwrAiter_skills](https://github.com/MediaZione/AwrAiter_skills) лежит скилл с полным контрактом инструментов, авторизацией, порядком «черновик → проверка → превью → расписание» и ограничениями, которых агент должен придерживаться:
+
+```bash
+# Claude Code — как плагин
+claude plugin marketplace add MediaZione/AwrAiter_skills
+claude plugin install awraiter@awraiter
+
+# Codex и любой другой агент со скиллами
+npx skills add MediaZione/AwrAiter_skills --skill awraiter
+```
+
 ### ChatGPT
 
 В каталоге плагинов ChatGPT AwrAiter пока нет — добавьте его как свой MCP-сервер: **Settings → Security and login → Developer mode**, затем **chatgpt.com/plugins → +**, вставьте URL, оставьте OAuth и нажмите **Connect**. В чате выберите его в меню инструментов.
