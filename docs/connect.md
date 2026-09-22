@@ -34,7 +34,7 @@ https://awraiter.ai/mcp
 claude mcp add --transport http awraiter https://awraiter.ai/mcp
 ```
 
-Claude Code will walk you through the OAuth sign-in on first use. Alternatively use a personal access token (below):
+Claude Code will walk you through the OAuth sign-in on first use. Alternatively use a personal access token (below) — the *Claude Code* tab in the token dialog gives you this exact command with the token filled in:
 
 ```bash
 claude mcp add --transport http awraiter https://awraiter.ai/mcp \
@@ -100,7 +100,7 @@ If your client can't do OAuth, mint a token yourself — no need to write to sup
    - **full** — the assistant can also draft, schedule, publish and edit channel memory.
 3. Pass it as a header on every request: `Authorization: Bearer YOUR_TOKEN`.
 
-The token is shown once at creation; you can see last-used time and revoke any token on the same page. A read-only token is pinned to the team it was minted in.
+The token is shown once at creation, and the same dialog gives you ready-to-paste snippets with the token already inside: a **Claude Code** command, a **JSON config** for Claude Desktop / Cursor / VS Code / Gemini CLI, a **cURL** call and a **Node.js** example for the REST API — pick your client's tab and press copy. You can see last-used time and revoke any token on the same page. A read-only token is pinned to the team it was minted in.
 
 ---
 

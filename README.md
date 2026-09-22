@@ -61,7 +61,7 @@ The ChatGPT/Codex desktop form has no OAuth option; connect it with a token inst
 
 ### Clients without OAuth (token auth)
 
-Create a token in the panel under [**MCP connection**](https://awraiter.ai/mcp-connect) — it is shown once — and send it as a header:
+Create a token in the panel under [**MCP connection**](https://awraiter.ai/mcp-connect) — it is shown once, together with ready-to-paste snippets (Claude Code command, JSON config, cURL, Node.js) that already contain it — and send it as a header:
 
 ```
 Authorization: Bearer YOUR_TOKEN

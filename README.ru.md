@@ -61,7 +61,7 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp
 
 ### Клиенты без OAuth (по токену)
 
-Создайте токен в панели в разделе [**Подключение MCP**](https://awraiter.ai/mcp-connect) — он показывается один раз — и передавайте его заголовком:
+Создайте токен в панели в разделе [**Подключение MCP**](https://awraiter.ai/mcp-connect) — он показывается один раз вместе с готовыми сниппетами (команда Claude Code, JSON-конфиг, cURL, Node.js), в которых он уже подставлен — и передавайте его заголовком:
 
 ```
 Authorization: Bearer ВАШ_ТОКЕН
