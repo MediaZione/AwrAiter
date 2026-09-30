@@ -149,7 +149,7 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp \
 | `get_content_plan` | План канала и его слоты. |
 | `find_free_slot` | Ближайший свободный слот в плане. |
 | `create_content_plan` ✍️ | Создать контент-план для канала. |
-| `get_playbook` | Пошаговый плейбук оператора (analyze / create_plan / fill / improve / rewrite). |
+| `get_playbook` | Пошаговый плейбук оператора (analyze / create_plan / fill / improve / rewrite / team). |
 
 ### Память канала ✍️
 

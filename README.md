@@ -9,7 +9,7 @@ A remote MCP server for the **Telegram channels you administer**: read analytics
 
 **Not a userbot.** No phone number, no login code, no `.session` file. The server acts through your AwrAIter account and reaches only the channels of the team you authorize.
 
-[Русская версия](README.ru.md) · [Connection guide](docs/connect.md) · [Tool reference](docs/tools.md) · [awraiter.ai](https://awraiter.ai)
+[Русская версия](README.ru.md) · [Connection guide](docs/connect.md) · [Tool reference](docs/tools.md) · [Team and invites](docs/team.md) · [awraiter.ai](https://awraiter.ai)
 
 ---
 

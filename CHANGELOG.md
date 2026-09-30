@@ -6,6 +6,13 @@ limits. Changes inside the AwrAIter panel that do not alter this interface are n
 Dates are in UTC. This file starts at the first public release of the documentation; the state
 described under 1.0.0 is what the live server has been serving up to that date.
 
+## Unreleased
+
+- **`get_playbook` task `team`.** Returns how inviting people works: seats, the 48-hour
+  one-person invite link, the owner's and the invitee's steps, and what each refusal from the
+  bot means. The connector still cannot create, send or accept invites.
+- New guide: [team and invites](docs/team.md) ([ru](docs/team.ru.md)).
+
 ## 1.0.0 — 2026-08-26
 
 First public release of this repository.

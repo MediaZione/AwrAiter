@@ -149,7 +149,7 @@ The full reference, with the exact scope each tool needs, is in **[tools.md](too
 | `get_content_plan` | The channel's plan and its slots. |
 | `find_free_slot` | Earliest free slot in the plan. |
 | `create_content_plan` ✍️ | Create a content plan for a channel. |
-| `get_playbook` | Step-by-step operator playbook for a workflow (analyze / create_plan / fill / improve / rewrite). |
+| `get_playbook` | Step-by-step operator playbook for a workflow (analyze / create_plan / fill / improve / rewrite / team). |
 
 ### Channel memory ✍️
 

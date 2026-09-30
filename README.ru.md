@@ -9,7 +9,7 @@ MCP-сервер для **Telegram-каналов, где вы админист�
 
 **Это не юзербот.** Ни номера телефона, ни кода входа, ни файла сессии. Сервер работает от вашего аккаунта AwrAIter и видит только каналы той команды, доступ к которой вы подтвердили.
 
-[English version](README.md) · [Гайд по подключению](docs/connect.ru.md) · [Справочник инструментов](docs/tools.ru.md) · [awraiter.ai](https://awraiter.ai)
+[English version](README.md) · [Гайд по подключению](docs/connect.ru.md) · [Справочник инструментов](docs/tools.ru.md) · [Команда и приглашения](docs/team.ru.md) · [awraiter.ai](https://awraiter.ai)
 
 ---
 

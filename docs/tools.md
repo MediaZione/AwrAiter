@@ -61,7 +61,7 @@ token cannot reach a channel its owner cannot reach in the panel.
 | `get_content_plan` | `read` | The channel's plan configuration and its slots. |
 | `find_free_slot` | `read` | The earliest slot in the plan with no post in it yet. |
 | `create_content_plan` | `full` | Creates a content plan for a channel. |
-| `get_playbook` | `read` | A step-by-step operator playbook for one workflow: analyze, create a plan, fill it, improve, or rewrite. |
+| `get_playbook` | `read` | A step-by-step operator playbook for one workflow: analyze, create a plan, fill it, improve, or rewrite — or `team`: how to invite people, seats, and why an invite link fails ([guide](team.md)). |
 
 ## Channel memory
 
