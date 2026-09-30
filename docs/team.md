@@ -16,7 +16,7 @@ Several people can run the same channels as one team. The team owner invites the
 
 1. Open the link on a device with Telegram. It opens @awraiter_bot; press **Start** if Telegram asks.
 2. The bot names the team and your role. Press **Accept invitation**.
-3. Press the **Open …** button under the bot's reply. You are signed in and land in the new team.
+3. Press the **Open AwrAiter** button under the bot's reply. You are signed in and land in the new team.
 4. Already in another team? Switch teams at the top of the sidebar (**Switch team**).
 
 **Roles and channels.** The role decides what a member may do; roles are edited in **Settings → Team → Roles**. In **Settings → Team → Members**, the **Channels** column limits a member to the channels you pick; leave it empty for access to every channel. **Remove user** frees the seat.
