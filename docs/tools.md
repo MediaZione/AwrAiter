@@ -50,9 +50,31 @@ token cannot reach a channel its owner cannot reach in the panel.
 
 | Tool | Scope | What it does |
 |---|---|---|
-| `create_post_from_text` | `full` | Saves a ready draft from text the assistant wrote. Accepts images and videos by URL; media is all-or-nothing, so a partially downloadable set fails rather than publishing half of it. |
+| `create_post_from_text` | `full` | Saves a ready draft from text the assistant wrote. Accepts images, videos and audio tracks by URL (see below); media is all-or-nothing, so a partially downloadable set fails rather than publishing half of it. |
 | `schedule_post` | `full` | Publishes a draft now, or schedules it for a given time. |
 | `cancel_scheduled_post` | `full` | Cancels a scheduled post by its plan id. |
+
+### Media by URL
+
+`create_post_from_text` takes public, direct-download links — the URL must return the file itself, not a web page:
+
+| Field | Up to | Formats | Notes |
+|---|---|---|---|
+| `imageUrls` | 10 | JPG, PNG, WebP | SVG and GIF are rejected. |
+| `videoUrls` | 3 | MP4 preferred | |
+| `audioUrls` | 5 | MP3, M4A, OGG, WAV, FLAC, up to 49 MB each | Sent as music tracks (title and performer shown); several tracks form an album with the post text as the caption. Cannot be combined with images or videos — Telegram does not allow it. Requires `rightsConfirmed: true`. |
+
+`rightsConfirmed` is set by the assistant only after the operator confirms they hold the rights to publish the tracks; without it the call fails with `rights_not_confirmed`.
+
+Where a direct link comes from:
+
+- **Dropbox** — change `dl=0` to `dl=1` at the end of a shared link.
+- **Google Drive** — `https://drive.google.com/uc?export=download&id=<file id>`, with the file shared by link.
+- **Your own site, S3 or any file host** that serves the file at a stable URL.
+
+YouTube, SoundCloud, Yandex Disk and Telegram pages are pages, not files: they fail with `media_download_failed`. To take a track from those sites, use **Add media → Download audio by URL** in the editor.
+
+A post can also be media-only: in the panel, text is optional for photos, videos and tracks.
 
 ## Content plans
 

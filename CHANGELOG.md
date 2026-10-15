@@ -8,6 +8,11 @@ described under 1.0.0 is what the live server has been serving up to that date.
 
 ## Unreleased
 
+- **`create_post_from_text`: `audioUrls` and `rightsConfirmed`** (live since 2026-10-15). Up to 5
+  direct links to audio files (MP3, M4A, OGG, WAV, FLAC, up to 49 MB each), sent as music tracks;
+  several tracks form an album. Cannot be combined with `imageUrls`/`videoUrls`. Requires
+  `rightsConfirmed: true`, otherwise the call fails with `rights_not_confirmed`. See
+  [media by URL](docs/tools.md#media-by-url).
 - **`get_playbook` task `team`.** Returns how inviting people works: seats, the 48-hour
   one-person invite link, the owner's and the invitee's steps, and what each refusal from the
   bot means. The connector still cannot create, send or accept invites.

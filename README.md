@@ -103,7 +103,7 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 | `check_uniqueness` | Is this draft a near-duplicate of existing posts or a copy of a source? |
 | `score_post` | Data-grounded quality signal for a draft, specific to this channel |
 | `preview_post` | Exact message that would be sent — title, body, media, formatting |
-| `create_post_from_text` ✍️ | Save a ready-to-publish draft from text the assistant wrote |
+| `create_post_from_text` ✍️ | Save a ready-to-publish draft from text the assistant wrote, with photos, videos or music tracks by link |
 | `schedule_post` ✍️ | Publish a draft now, or schedule it for a given time |
 | `cancel_scheduled_post` ✍️ | Cancel a scheduled post by its plan id |
 | `get_content_plan` | The channel's plan configuration and its slots |
