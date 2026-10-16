@@ -114,3 +114,6 @@ held on several posts. It reads them before every draft; you can edit them in th
 - **Availability:** every plan, including the free one.
 - **Idempotency:** publishing tools are idempotency-keyed, so a retried call after a dropped
   connection does not post twice.
+- **Settings run on every call.** `set_*`, `add_/remove_banlist_entry`, `add_channel_emoji_set` and
+  `add_/remove_channel_learning` are safe to repeat by themselves and are never answered from a cache,
+  so undoing a change the same day (add → remove → add) is applied.

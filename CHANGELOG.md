@@ -8,6 +8,12 @@ described under 1.0.0 is what the live server has been serving up to that date.
 
 ## Unreleased
 
+- **Fixed: a same-day undo of a setting was silently ignored.** Settings tools (`set_brand_brief`,
+  `set_channel_header`, `set_channel_footer`, `set_autopilot_policy`, `add_/remove_banlist_entry`,
+  `add_channel_emoji_set`) returned the cached result of an identical call made in the last 24 hours
+  without applying it, so add → remove → add, or set X → Y → X, left the middle value in place; an
+  identical call by a teammate was not applied either. They now run on every call. Their
+  `idempotentHint` stays `true`.
 - **`review_posts`** (new, `read`, live since 2026-10-16). How recent posts did against the channel's own posts at the
   same age: one post by `postId`/`tgMsgId` or the last `days` (default 7, max 30), up to 20; posts under
   6 hours are counted in `summary.too_early` instead of listed.
