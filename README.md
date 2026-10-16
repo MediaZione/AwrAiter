@@ -85,7 +85,7 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 
 ## Tools
 
-25 tools. The ones that change something are marked ✍️ — everything else is read-only.
+29 tools. The ones that change something are marked ✍️ — everything else is read-only.
 
 | Tool | What it does |
 |---|---|
@@ -95,6 +95,7 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 | `get_channel` | One channel's profile: name, chat id, language, description |
 | `get_channel_stats` | Subscribers, reach, ER and dynamics over 1–90 days |
 | `get_channel_insights` | What works for this audience, scored against the channel's own 30-day median |
+| `review_posts` | How recent posts did against the channel's own posts at the same age: above, on par or below |
 | `get_recent_posts` | Most recent published posts, newest first |
 | `search_channel_content` | Semantic search over the channel's own posts and source material |
 | `search_sources` | Search the channel's bound sources |
@@ -109,10 +110,13 @@ Step-by-step instructions for Claude, Claude Code, ChatGPT, Codex, Gemini CLI an
 | `get_content_plan` | The channel's plan configuration and its slots |
 | `create_content_plan` ✍️ | Create a content plan for a channel |
 | `find_free_slot` | Earliest slot in the plan with no post yet |
-| `get_channel_memory` | The channel's brand brief and banlist |
+| `get_channel_memory` | The channel's brand brief, banlist and learnings journal |
 | `set_brand_brief` ✍️ | Replace the channel's brand/tone guidance |
 | `add_banlist_entry` ✍️ | Add a forbidden word to the channel's banlist |
 | `remove_banlist_entry` ✍️ | Remove a word from the banlist |
+| `add_channel_learning` ✍️ | Record a hypothesis or a proven learning about what works in the channel |
+| `remove_channel_learning` ✍️ | Remove a journal entry |
+| `set_assist_mode` ✍️ | How much the assistant coaches you: quiet, normal or coach |
 | `get_playbook` | Step-by-step operator playbook for a workflow |
 
 What each tool returns, and the exact scope it needs, is in **[docs/tools.md](docs/tools.md)**.

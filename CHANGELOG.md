@@ -8,6 +8,15 @@ described under 1.0.0 is what the live server has been serving up to that date.
 
 ## Unreleased
 
+- **`review_posts`** (new, `read`). How recent posts did against the channel's own posts at the
+  same age: one post by `postId`/`tgMsgId` or the last `days` (default 7, max 30), up to 20.
+  Verdict `above` / `on_par` / `below` / `too_early` / `no_baseline`, plus `viewsScore` and
+  `engagementScore`; paid plans also get the excerpt and opening features.
+- **Learnings journal.** `add_channel_learning` and `remove_channel_learning` (new, `full`) keep up
+  to 30 hypotheses and learnings per channel; `get_channel_memory` now returns `learnings`.
+- **`set_assist_mode`** (new, `full`). How much the assistant coaches the user: `quiet`, `normal`
+  or `coach`. The server instructions now carry the user's mode and, until one is chosen, ask the
+  assistant to ask once. Warnings stay in every mode.
 - **`get_playbook` task `onboarding`** (live since 2026-10-16). A first session with a channel:
   read its history and numbers, build an audience portrait from the data and the operator's
   answers, draft a brand brief and banlist (saved only on the operator's yes), propose rubrics

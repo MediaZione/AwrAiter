@@ -104,7 +104,7 @@ The token is shown once at creation, and the same dialog gives you ready-to-past
 
 ---
 
-## What the assistant can do — all 25 tools
+## What the assistant can do — all 29 tools
 
 Tools marked ✍️ change something and need OAuth or a *full*-scope token; a `read` token cannot even see them. Everything else is read-only and works with any scope. `deep_analyze` is marked ✍️ because it spends the team's AI credits — every other tool is free.
 
@@ -125,6 +125,7 @@ The full reference, with the exact scope each tool needs, is in **[tools.md](too
 |---|---|
 | `get_channel_stats` | The analytics dashboard: subscribers, reach, ER, dynamics over 1–90 days. |
 | `get_channel_insights` | What works for this audience: top/flop posts scored vs the 30-day median, plus statistically-backed patterns (best day, posting window, length, question-at-the-end) once the channel has 20+ scored posts. |
+| `review_posts` | How recent posts did against the channel's own posts at the same age (above / on par / below), for the weekly review. |
 | `deep_analyze` ✍️ | Deep AI analysis of one channel or a comparison of several — runs on AwrAIter's servers, spends AI credits. |
 | `get_recent_posts` | Latest published posts of a channel. |
 | `search_channel_content` | Semantic search over the channel's own past posts and sources. |
@@ -155,9 +156,11 @@ The full reference, with the exact scope each tool needs, is in **[tools.md](too
 
 | Tool | What it does |
 |---|---|
-| `get_channel_memory` | The channel's brand brief and banlist. |
+| `get_channel_memory` | The channel's brand brief, banlist and learnings journal. |
 | `set_brand_brief` ✍️ | Set free-form brand/tone guidance the AI follows. |
 | `add_banlist_entry` ✍️ / `remove_banlist_entry` ✍️ | Maintain the channel's forbidden-words list. |
+| `add_channel_learning` ✍️ / `remove_channel_learning` ✍️ | Keep the channel's journal of hypotheses and proven learnings. |
+| `set_assist_mode` ✍️ | How much the assistant coaches you: `quiet`, `normal` or `coach`. Warnings come in every mode. |
 
 ---
 
@@ -170,6 +173,10 @@ The full reference, with the exact scope each tool needs, is in **[tools.md](too
 > *What are the statistically best day and time to post on my channel?*
 
 > *Build a content plan for next week: 5 posts, alternating news and evergreen topics.*
+
+> *Weekly review: how did this week's posts do, and what should we keep doing?*
+
+> *Just do what I ask, no tips.*
 
 ## Troubleshooting
 

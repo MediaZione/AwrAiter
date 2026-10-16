@@ -1,6 +1,6 @@
 # Tool reference
 
-All 25 tools the AwrAIter MCP server exposes, and the scope each one needs.
+All 29 tools the AwrAIter MCP server exposes, and the scope each one needs.
 
 [Русская версия](tools.ru.md) · [Connection guide](connect.md) · [← back to the README](../README.md)
 
@@ -32,6 +32,7 @@ token cannot reach a channel its owner cannot reach in the panel.
 |---|---|---|
 | `get_channel_stats` | `read` | Subscribers, reach, ER/ERR and their dynamics over 1–90 days. |
 | `get_channel_insights` | `read` | What works for this audience: top and flop posts scored against the channel's own 30-day median, plus statistically-backed patterns (best weekday, posting window, length, question-at-the-end) once the channel has 20 or more scored posts. Each top/flop post carries a t.me `link` when the channel's link is known. |
+| `review_posts` | `read` | How recent posts did against this channel's own posts **at the same age** (a 5-hour-old post is compared with others at about 5 hours, a week-old one with week-old posts). One post by `postId` or `tgMsgId`, or the last `days` (default 7, max 30), up to 20 posts. Per post: views, reactions, forwards, comments, `viewsScore`, `engagementScore` and a verdict: `above` (≥1.25× the median of same-age posts), `on_par`, `below` (≤0.8×), `too_early` (under 6 hours) or `no_baseline`. Covers every post in the channel. Paid plans also get the excerpt, length, opening features and media. |
 | `get_recent_posts` | `read` | Most recent published posts, newest first. |
 | `search_channel_content` | `read` | Semantic search across the channel's own posts and source material. |
 | `deep_analyze` | `full` | Deep AI analysis of one channel, or a comparison across several. Runs a frontier model on our servers and **spends the team's AI credits** — which is why it needs `full`. Every other tool here is free. |
@@ -88,14 +89,24 @@ A post can also be media-only: in the panel, text is optional for photos, videos
 ## Channel memory
 
 The brand brief and the banlist are what keep generated posts sounding like the channel
-rather than like a language model.
+rather than like a language model. The learnings journal is what the assistant concluded from the
+channel's own numbers (with `review_posts`): hypotheses while it tests them, learnings once they
+held on several posts. It reads them before every draft; you can edit them in the panel.
 
 | Tool | Scope | What it does |
 |---|---|---|
-| `get_channel_memory` | `read` | The channel's brand brief and banlist. |
+| `get_channel_memory` | `read` | The channel's brand brief, banlist and learnings journal. |
 | `set_brand_brief` | `full` | Replaces the channel's brand and tone guidance. |
 | `add_banlist_entry` | `full` | Adds a forbidden word to the channel's banlist. |
 | `remove_banlist_entry` | `full` | Removes a word from the banlist. |
+| `add_channel_learning` | `full` | Records a finding: `kind` = `hypothesis` (seen on 1–2 posts) or `learning` (held on 3 or more), up to 300 characters, optional `evidence`. Up to 30 entries per channel. |
+| `remove_channel_learning` | `full` | Removes a journal entry by id. |
+
+## Assistant settings
+
+| Tool | Scope | What it does |
+|---|---|---|
+| `set_assist_mode` | `full` | How much the assistant coaches you, for all channels: `quiet` (does exactly what you ask, no tips), `normal` (a short tip only when it matters) or `coach` (reviews every draft, suggests topics and hypotheses, weekly review). The assistant asks once on your first session; you can also change it on the panel's Account page. Warnings about banned words, repeats, Telegram limits and failed checks come in every mode. |
 
 ## Limits
 
