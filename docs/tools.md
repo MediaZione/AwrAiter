@@ -24,14 +24,14 @@ token cannot reach a channel its owner cannot reach in the panel.
 | `list_teams` | `read` | Teams you belong to; marks the active one. |
 | `switch_team` | `full` | Switches the active team. Membership is verified server-side, so this cannot be used to reach a team you are not in. |
 | `list_channels` | `read` | Channels of the active team. |
-| `get_channel` | `read` | One channel's profile: name, chat id, language, description. |
+| `get_channel` | `read` | One channel's profile: name, chat id, public `url`, `postLinkBase` (append `/<message id>` to link a post), language, description. |
 
 ## Analytics
 
 | Tool | Scope | What it does |
 |---|---|---|
 | `get_channel_stats` | `read` | Subscribers, reach, ER/ERR and their dynamics over 1–90 days. |
-| `get_channel_insights` | `read` | What works for this audience: top and flop posts scored against the channel's own 30-day median, plus statistically-backed patterns (best weekday, posting window, length, question-at-the-end) once the channel has 20 or more scored posts. |
+| `get_channel_insights` | `read` | What works for this audience: top and flop posts scored against the channel's own 30-day median, plus statistically-backed patterns (best weekday, posting window, length, question-at-the-end) once the channel has 20 or more scored posts. Each top/flop post carries a t.me `link` when the channel's link is known. |
 | `get_recent_posts` | `read` | Most recent published posts, newest first. |
 | `search_channel_content` | `read` | Semantic search across the channel's own posts and source material. |
 | `deep_analyze` | `full` | Deep AI analysis of one channel, or a comparison across several. Runs a frontier model on our servers and **spends the team's AI credits** — which is why it needs `full`. Every other tool here is free. |
@@ -83,7 +83,7 @@ A post can also be media-only: in the panel, text is optional for photos, videos
 | `get_content_plan` | `read` | The channel's plan configuration and its slots. |
 | `find_free_slot` | `read` | The earliest slot in the plan with no post in it yet. |
 | `create_content_plan` | `full` | Creates a content plan for a channel. |
-| `get_playbook` | `read` | A step-by-step operator playbook for one workflow: analyze, create a plan, fill it, improve, or rewrite — or `team`: how to invite people, seats, and why an invite link fails ([guide](team.md)). |
+| `get_playbook` | `read` | A step-by-step operator playbook for one workflow: `onboarding` (a first session with a channel: its history and numbers, audience, a brand brief and banlist, rubrics and posting rhythm, interlinking posts, then a plan), analyze, create a plan, fill it, improve, or rewrite — or `team`: how to invite people, seats, and why an invite link fails ([guide](team.md)). |
 
 ## Channel memory
 

@@ -8,6 +8,16 @@ described under 1.0.0 is what the live server has been serving up to that date.
 
 ## Unreleased
 
+- **`get_playbook` task `onboarding`** (live since 2026-10-16). A first session with a channel:
+  read its history and numbers, build an audience portrait from the data and the operator's
+  answers, draft a brand brief and banlist (saved only on the operator's yes), propose rubrics
+  and a posting rhythm, interlink posts (navigation post, links to earlier posts, series,
+  digests), then hand over to the content plan. Nothing is published. New MCP prompt
+  `onboard_channel` starts it. The server instructions now offer it once when a channel has no
+  brand brief, and carry short post-craft rules.
+- **`get_channel`: `url` and `postLinkBase`.** The channel's public t.me link (null for a private
+  channel) and the prefix for links to its posts: append `/<message id>`.
+- **`get_channel_insights`: `link` on top/flop posts** when the channel's link is known.
 - **`create_post_from_text`: `audioUrls` and `rightsConfirmed`** (live since 2026-10-15). Up to 5
   direct links to audio files (MP3, M4A, OGG, WAV, FLAC, up to 49 MB each), sent as music tracks;
   several tracks form an album. Cannot be combined with `imageUrls`/`videoUrls`. Requires

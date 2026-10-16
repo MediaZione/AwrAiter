@@ -117,7 +117,7 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp \
 | `list_teams` | Список ваших команд с пометкой активной. |
 | `switch_team` ✍️ | Переключить активную команду. |
 | `list_channels` | Каналы активной команды. |
-| `get_channel` | Профиль канала (имя, язык, описание). |
+| `get_channel` | Профиль канала (имя, язык, описание, публичная ссылка, префикс ссылок на посты). |
 
 ### Аналитика и инсайты
 
@@ -149,7 +149,7 @@ claude mcp add --transport http awraiter https://awraiter.ai/mcp \
 | `get_content_plan` | План канала и его слоты. |
 | `find_free_slot` | Ближайший свободный слот в плане. |
 | `create_content_plan` ✍️ | Создать контент-план для канала. |
-| `get_playbook` | Пошаговый плейбук оператора (analyze / create_plan / fill / improve / rewrite / team). |
+| `get_playbook` | Пошаговый плейбук оператора (onboarding / analyze / create_plan / fill / improve / rewrite / team). |
 
 ### Память канала ✍️
 
