@@ -8,6 +8,13 @@ described under 1.0.0 is what the live server has been serving up to that date.
 
 ## Unreleased
 
+- **Fixed: scheduling again after a cancel did nothing** (live since 2026-10-17). `schedule_post` →
+  `cancel_scheduled_post` → the same `schedule_post` within 24 hours returned the cancelled plan from
+  the retry cache and scheduled nothing. The cached answer is now reused only while its plan still
+  exists; a retry of a live plan still does not post twice.
+- **Quotes are sent as plain quotes** (live since 2026-10-17). A quote (`> ` lines) used to go out as a
+  collapsed (expandable) quote; editing such a post in Telegram's own scheduled queue could wipe its
+  whole text. Quotes are now regular, always-open quotes.
 - **Fixed: a same-day undo of a setting was silently ignored.** Settings tools (`set_brand_brief`,
   `set_channel_header`, `set_channel_footer`, `set_autopilot_policy`, `add_/remove_banlist_entry`,
   `add_channel_emoji_set`) returned the cached result of an identical call made in the last 24 hours

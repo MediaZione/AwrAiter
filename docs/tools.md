@@ -113,7 +113,8 @@ held on several posts. It reads them before every draft; you can edit them in th
 - **Rate limit:** 120 requests per 60 seconds per token. An agent in a tight loop should back off.
 - **Availability:** every plan, including the free one.
 - **Idempotency:** publishing tools are idempotency-keyed, so a retried call after a dropped
-  connection does not post twice.
+  connection does not post twice. `schedule_post` replays its earlier answer only while that plan still
+  exists: after `cancel_scheduled_post`, the same call schedules the post again.
 - **Settings run on every call.** `set_*`, `add_/remove_banlist_entry`, `add_channel_emoji_set` and
   `add_/remove_channel_learning` are safe to repeat by themselves and are never answered from a cache,
   so undoing a change the same day (add → remove → add) is applied.
