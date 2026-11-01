@@ -11,6 +11,8 @@ A remote MCP server for the **Telegram channels you administer**: read analytics
 
 [Русская версия](README.ru.md) · [Connection guide](docs/connect.md) · [Tool reference](docs/tools.md) · [Team and invites](docs/team.md) · [awraiter.ai](https://awraiter.ai)
 
+**AI agent connecting this for someone?** Follow [AGENTS.md](AGENTS.md): exact commands for Claude Code, Codex, Gemini CLI and Cursor.
+
 ---
 
 ## Server

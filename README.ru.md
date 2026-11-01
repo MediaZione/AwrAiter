@@ -11,6 +11,8 @@ MCP-сервер для **Telegram-каналов, где вы админист�
 
 [English version](README.md) · [Гайд по подключению](docs/connect.ru.md) · [Справочник инструментов](docs/tools.ru.md) · [Команда и приглашения](docs/team.ru.md) · [awraiter.ai](https://awraiter.ai)
 
+**Вы ИИ-агент и подключаете сервер для человека?** Шаги с точными командами в [AGENTS.md](AGENTS.md).
+
 ---
 
 ## Сервер
